@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- Lien vers le CSS de Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+  <!-- Inclusion de bootstrap.bundle.min.js qui inclut Popper.js -->
+  <script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- Navbar avec le menu de navigation -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <!-- Liste des éléments du menu à gauche -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Home</a>
+      </li>
+    </ul>
+
+    <!-- Liste des éléments du menu à droite -->
+    <ul class="navbar-nav ms-auto"> <!-- ms-auto pour aligner à droite -->
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/formPatients}">Ajouter Patient</a> <!-- Lien vers formPatients -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/patient}">Chercher</a> <!-- Lien vers la page de recherche des patients -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Logout</a> <!-- Lien pour se déconnecter -->
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section layout:fragment="content1">
+  <!-- Contenu de la page ici -->
+</section>
+
+</body>
+</html>
