@@ -12,11 +12,11 @@
 <div class="container mt-5">
     <div class="col-md-6 offset-md-3">
         <h2>Modefier Un Patient</h2>
-        <!-- Formulaire d'ajout d'un patient -->
-        <form method="post" th:action="@{save}">
+        <form method="post" th:action="@{save(page=${page},keyword=${keyword})}">
             <div class="mb-3">
-                <label>ID</label>
-                <input class="form-control" type="text" name="id" th:value="${patient.id}" required>
+                <label>ID:</label>
+                <label th:text="${patient.id}"></label>
+                <input class="form-control" type="hidden" name="id" th:value="${patient.id}" required>
 
             </div>
 
