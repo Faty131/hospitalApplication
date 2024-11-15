@@ -46,6 +46,8 @@
           <td th:text="${p.score}"></td>
           <td>
             <a onclick="return confirm('sure?')" class="btn btn-danger" th:href="@{delete(id=${p.id }, keyword=${keyword}, page=${currentPage})}">Supprimer</a>
+            <a  class="btn btn-success" th:href="@{editPatient(id=${p.id })}">Update</a>
+
           </td>
 
         </tr>

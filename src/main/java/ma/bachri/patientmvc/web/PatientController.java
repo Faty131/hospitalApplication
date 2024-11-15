@@ -43,6 +43,9 @@ public class PatientController {
     public String home() {
         return "redirect:/index";
     }
+    public String search() {
+        return "redirect:/index";
+    }
 
     @GetMapping("/patients")
     @ResponseBody
@@ -57,10 +60,17 @@ public class PatientController {
     }
 
     @PostMapping("/save")
-    public String savePatient(Model model, Patient patient) {
+    public String savePatient(Model model , Patient patient) {
 
         patientRepository.save(patient);
-        return "formPatients";
+        return "redirect:/index";
+    }
+    @GetMapping("/editPatient")
+    public String editPatient(Model model, Long id) {
+        Patient patient=patientRepository.findById(id).orElse(null);
+        if(patient==null) throw new RuntimeException("Patient introuvable");
+        model.addAttribute("patient", patient);
+        return "editPatient";
     }
 }
 
